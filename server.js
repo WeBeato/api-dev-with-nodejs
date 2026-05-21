@@ -1,9 +1,18 @@
 const calc = require('./funcs')
+const fs = require('fs') // File System
 
-console.log('webeato.ir');
+// fs.writeFile('./data.txt', 'Webeato Is The Best.', err => {
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+//     console.log('File is Created !!!');
+// })
 
-console.log(calc);
-console.log(calc.add(12, 2));
-console.log(calc.minus(12, 2));
-console.log(calc.devide(12, 2));
-console.log(calc.power(12, 2));
+fs.rename('./data.txt', './info.txt', err => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log('File is renamed !!!');
+})
