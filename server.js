@@ -1,12 +1,12 @@
 const calc = require('./funcs')
 const fs = require('fs') // File System
+const path = require('path')
 
+// console.log(__filename);
+// console.log(__dirname);
 
-fs.readFile('./my-data.txt', 'utf-8', (err, data) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log(data);
+let modelsPathWithModule = path.join(__dirname, '/../../models')
+let modelsPathWithoutModule = `${__dirname}/../../models`
 
-})
+console.log(modelsPathWithModule);
+console.log(modelsPathWithoutModule);
