@@ -1,4 +1,5 @@
 const http = require('http')
+const url = require('url')
 
 let database = {
     users: [
@@ -15,7 +16,9 @@ let database = {
 
 
 const server = http.createServer((req, res) => {
-    console.log(req.url);
+    const queryStrings = url.parse(req.url, true).query
+
+    console.log(queryStrings.name);
 
     if (req.url === '/api/users') {
         let users = database.users;
