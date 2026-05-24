@@ -1,9 +1,12 @@
-const calc = require('./funcs')
-const fs = require('fs') // File System
-const path = require('path')
-const os = require('os')
+const http = require('http')
 
-console.log(os.arch());
-console.log(os.cpus());
-console.log(os.totalmem());
-console.log(os.freemem());
+// http.createServer((req, res) => {
+//     console.log('Request:', req.method, req.url);
+// }).listen(3000)
+
+
+const server = http.createServer((req, res) => {
+    console.log('Request:', req.method, req.url);
+})
+
+server.listen(3000)
