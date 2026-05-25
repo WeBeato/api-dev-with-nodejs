@@ -13,6 +13,8 @@ let database = {
 
 
 const server = http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
     const urlParams = url.parse(req.url, true);
 
     if (urlParams.pathname === '/api/users') {
