@@ -17,6 +17,10 @@ const db = {
 
 app.post('/api/new-user', (req, res) => {
     console.log(req.body);
+    let newUser = { id: db.users.length + 1, ...req.body }
+    let allUsers = [...db.users]
+    allUsers.push(newUser)
+    console.log(`Users => ${JSON.stringify(allUsers)}`);
     res.send('New User Created :))')
 })
 
