@@ -1,10 +1,11 @@
 const http = require('http')
 const express = require('express')
-const { json } = require('stream/consumers')
+const bodyParser = require('body-parser')
 
 const app = express()
 
-app.use(express.json({ extended: false }))
+// app.use(express.json({ extended: false }))
+app.use(bodyParser.json())
 
 // const server = http.createServer((req, res) => {
 //     if (req.method === 'GET' && req.url === '/api/products') {
