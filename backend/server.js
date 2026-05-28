@@ -17,4 +17,7 @@ const db = {
 
 app.post('/api/new-user', (req, res) => {
     console.log(req.body);
+    res.send('New User Created :))')
 })
+
+app.listen(3000)
