@@ -1,8 +1,11 @@
 const http = require('http')
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const app = express()
+
+app.use(cors())
 
 // app.use(express.json({ extended: false }))
 app.use(bodyParser.json())
@@ -49,6 +52,10 @@ app.post('/api/new-user', (req, res) => {
     let newUser = req.body
     db.users.push(newUser)
     res.send(`New user created! => ${JSON.stringify(db.users)}`)
+})
+
+app.get('/api/teachers', cors(), (req, res) => {
+    res.send('Show Teachers');
 })
 
 app.listen(3000, () => {
