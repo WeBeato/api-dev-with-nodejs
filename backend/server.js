@@ -13,11 +13,14 @@ webeatoDB.connect((err) => {
     } else {
         console.log('Connect to database successfuly :))');
         let newMasterpieceQuery = 'INSERT INTO `masterpieces` VALUES ("susi","SUSI","Strategic unit of specific information","SUSI project description","website","2025")'
-        webeatoDB.query(newMasterpieceQuery, (err, result) => {
+        
+        let deleteMasterpieceQuery = 'DELETE FROM `masterpieces` WHERE id = "susi"'
+
+        webeatoDB.query(deleteMasterpieceQuery, (err, result) => {
             if (err) {
-                console.log('You have error in insert query => ', err);
+                console.log('You have error in delete query => ', err);
             } else {
-                console.log('One project inserted :))');
+                console.log('project deleted :))');
             }
         })
     }
