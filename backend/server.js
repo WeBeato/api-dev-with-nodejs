@@ -1,26 +1,20 @@
-const mysql = require('mysql')
-
-const webeatoDB = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'webeato'
-})
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const webeatoDB = require('./db/webeatoDB')
 
 webeatoDB.connect((err) => {
     if (err) {
-        console.log('You have error', err);
+        console.log('You have error! => ', err);
     } else {
-        console.log('Connect to database successfuly :))');
-        let newMasterpieceQuery = 'INSERT INTO `masterpieces` VALUES ("susi","SUSI","Strategic unit of specific information","SUSI project description","website","2025")'
-        
-        let deleteMasterpieceQuery = 'DELETE FROM `masterpieces` WHERE id = "susi"'
+        console.log('Connect to webeato db successfully.');
+        let newUserInsertQuery = 'INSERT INTO `users` VALUES (NULL, "mohammad","ghanavati","webeato","mm-beato","1405/03/10")'
 
-        webeatoDB.query(deleteMasterpieceQuery, (err, result) => {
+        webeatoDB.query(newUserInsertQuery, (err, result) => {
             if (err) {
-                console.log('You have error in delete query => ', err);
+                console.log('insert user faild!');
             } else {
-                console.log('project deleted :))');
+                console.log('user inserted.');
             }
         })
     }
