@@ -1,15 +1,16 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const usersRoutes = require('./routes/usersRoutes')
+const mysql = require('mysql')
 
-const app = express()
+const webeatoDB = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'webeato'
+})
 
-app.use(cors())
-app.use(bodyParser.json())
-
-app.use('/api/users',usersRoutes)
-// app.use('/api/articles',articlesRoutes)
-// app.use('/api/products',productsRoutes)
-
-app.listen(3000)
+webeatoDB.connect((err) => {
+    if (err) {
+        console.log('You have error', err);
+    } else {
+        console.log('Connect to database successfuly :))');
+    }
+})
