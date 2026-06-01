@@ -30,45 +30,32 @@ usersRoutes.post('/new-user', (req, res) => {
 })
 
 usersRoutes.get('/all', (req, res) => {
-    webeatoDB.connect((err) => {
-        if (err) {
-            console.log('You have error! => ', err);
-        } else {
-            console.log('Connect to webeato db successfully.');
-            let getAllUsersQuery = `SELECT * FROM users`
+    console.log('Connect to webeato db successfully.');
+    let getAllUsersQuery = `SELECT * FROM users`
 
-            webeatoDB.query(getAllUsersQuery, (err, result) => {
-                if (err) {
-                    console.log('Ger users faild!', err);
-                    res.send(null)
-                } else {
-                    console.log('All users => ', result);
-                    res.send(JSON.stringify(result))
-                }
-            })
+    webeatoDB.query(getAllUsersQuery, (err, result) => {
+        if (err) {
+            console.log('Ger users faild!', err);
+            res.send(null)
+        } else {
+            console.log('All users => ', result);
+            res.send(JSON.stringify(result))
         }
     })
 })
 
 usersRoutes.delete('/remove/:userID', (req, res) => {
     let userID = req.params.userID
+    console.log('Connect to webeato db successfully.');
 
-    webeatoDB.connect((err) => {
+    let deleteUserQuery = `DELETE FROM users WHERE id = ${userID}`
+    webeatoDB.query(deleteUserQuery, (err, result) => {
         if (err) {
-            console.log('You have error! => ', err);
+            console.log('Delete user faild!', err);
+            res.send(null)
         } else {
-            console.log('Connect to webeato db successfully.');
-
-            let deleteUserQuery = `DELETE FROM users WHERE id = ${userID}`
-            webeatoDB.query(deleteUserQuery, (err, result) => {
-                if (err) {
-                    console.log('Delete user faild!', err);
-                    res.send(null)
-                } else {
-                    console.log('User deleted => ', result);
-                    res.send(JSON.stringify(result))
-                }
-            })
+            console.log('User deleted => ', result);
+            res.send(JSON.stringify(result))
         }
     })
 })
