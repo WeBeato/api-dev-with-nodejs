@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>Sabzlearn</title>
+    <!-- links -->
+    <link rel="stylesheet" href="content/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!-- -------------------------------- modal -------------------------------- -->
+    <div class="modal-container" id="delete-modal">
+      <!-- ! add visible class to be visible ! -->
+      <div class="modal-content">
+        <!-- ! delete user content ! -->
+        <h1 class="modal-title">ایا از حذف این کاربر مطمئن هستید ؟</h1>
+        <div class="btn-groups">
+          <button class="unaccept-btn" onclick="closeDeleteModal()">خیر</button>
+          <button class="accept-btn" onclick="removeUser()">بله</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal-container" id="edit-modal">
+      <!-- ! add visible class to be visible ! -->
+      <div class="modal-content">
+
+        <!-- ! edit user content ! -->
+        <h1 class="modal-title">اطلاعات کاربر مورد نظر را بنویسید</h1>
+        <form action="" class="edit-user-form" dir="rtl">
+          <div class="input-field">
+            <span><i class="bi bi-cursor-text"></i></span>
+            <input
+              type="text"
+              id="firstname"
+              name=""
+              placeholder="نام"
+              spellcheck="false"
+            />
+          </div>
+          <div class="input-field">
+            <span><i class="bi bi-cursor-text"></i></span>
+            <input
+              type="text"
+              id="lastname"
+              name=""
+              placeholder="نام خانوادگی"
+              spellcheck="false"
+            />
+          </div>
+          <div class="input-field">
+            <span><i class="bi bi-calendar"></i></span>
+            <input
+              type="text"
+              id="username"
+              name=""
+              placeholder="نام کاربری"
+              spellcheck="false"
+            />
+          </div>
+          <div class="input-field">
+            <span><i class="bi bi-lock"></i></span>
+            <input
+              type="password"
+              id="password"
+              name=""
+              placeholder="رمز عبور"
+              spellcheck="false"
+            />
+          </div>
+
+          <button type="submit" class="accept-btn" id="edit-user">ثبت اطلاعات جدید</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-container" id="delete-modal">
+      <!-- ! add visible class to be visible ! -->
+      <div class="modal-content">
+        <!-- ! delete user content ! -->
+        <h1 class="modal-title"></h1>
+        <div class="btn-groups">
+          <button class="unaccept-btn">No</button>
+          <button class="accept-btn">Yes</button>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="user-title">
+      <!-- ⚙ Loading... -->
+      <!-- ! when you're fetching data you can show this status ! -->
+      کاربران ثبت نام شده 😎💣
+    </h1>
+
+    <div id="wrap-users"></div>
+
+    <script src="content/js/users.js"></script>
+  </body>
+</html>

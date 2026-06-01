@@ -15,7 +15,7 @@ form.addEventListener('submit', (e) => {
         password: passwordInput.value
     }
 
-    fetch('http://localhost:3000/api/users', {
+    fetch('http://localhost:3000/api/users/new-user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
