@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const webeatoDB = require('./db/webeatoDB')
 const usersRoutes = require('./routes/usersRoutes')
 
 
