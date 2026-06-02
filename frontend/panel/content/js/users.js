@@ -29,7 +29,7 @@ function getAllUsers() {
         <div class="btn-groups-column">
           <button class="delete-user-btn" onclick=showDeleteModal("${user.id
           }")>حذف</button>
-          <button class="edit-user-btn" onclick=openEditModal(${user.id
+          <button class="edit-user-btn" onclick=openEditModal(${JSON.stringify(user)
           })>ویرایش</button>
         </div>
         <div class="user-profile-wrap">
@@ -65,8 +65,13 @@ function removeUser() {
     })
 }
 
-function openEditModal(id) {
-  userID = id
+function openEditModal(user) {
+  userID = user.id
+  console.log(user);
+  firstNameInput.value = user.firstname
+  lastNameInput.value = user.lastname
+  userNameInput.value = user.username
+  passwordInput.value = user.password
   editModal.classList.add('visible')
 }
 
