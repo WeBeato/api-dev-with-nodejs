@@ -1,5 +1,9 @@
+const usersWrapper = document.querySelector('#wrap-users')
+const deleteModal = document.querySelector('#delete-modal')
+let userID = null
+
+
 window.addEventListener('load', () => {
-  const usersWrapper = document.querySelector('#wrap-users')
 
   fetch('http://localhost:3000/api/users/all')
     .then(res => res.json())
@@ -29,4 +33,21 @@ window.addEventListener('load', () => {
       });
     })
 })
+
+function showDeleteModal(id) {
+  userID = id
+  console.log(userID);
+  deleteModal.classList.add('visible')
+}
+
+function closeDeleteModal() {
+  deleteModal.classList.remove('visible')
+}
+
+function removeUser() {
+  fetch(`http://localhost:3000/api/users/remove/${userID}`, {
+    method: 'DELETE',
+  }).then(res => res.json())
+    .then(data => closeDeleteModal())
+}
 

@@ -54,7 +54,7 @@ usersRoutes.delete('/remove/:userID', (req, res) => {
             console.log('Delete user faild!', err);
             res.send(null)
         } else {
-            console.log('User deleted => ', result);
+            console.log(`User with id:${userID} deleted => `, result);
             res.send(JSON.stringify(result))
         }
     })
