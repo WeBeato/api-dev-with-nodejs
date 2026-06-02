@@ -1,6 +1,12 @@
 const usersWrapper = document.querySelector('#wrap-users')
 const deleteModal = document.querySelector('#delete-modal')
 const editModal = document.querySelector('#edit-modal')
+const firstNameInput = document.querySelector('#firstname')
+const lastNameInput = document.querySelector('#lastname')
+const userNameInput = document.querySelector('#username')
+const passwordInput = document.querySelector('#password')
+const editUserBtn = document.querySelector('#edit-user')
+
 let userID = null
 
 
@@ -23,9 +29,8 @@ function getAllUsers() {
         <div class="btn-groups-column">
           <button class="delete-user-btn" onclick=showDeleteModal("${user.id
           }")>حذف</button>
-          <button class="edit-user-btn" onclick=openEditModal(${JSON.stringify(
-            user
-          )})>ویرایش</button>
+          <button class="edit-user-btn" onclick=openEditModal(${user.id
+          })>ویرایش</button>
         </div>
         <div class="user-profile-wrap">
             <div class="user-profile-description">
@@ -43,7 +48,6 @@ function getAllUsers() {
 
 function showDeleteModal(id) {
   userID = id
-  console.log(userID);
   deleteModal.classList.add('visible')
 }
 
@@ -61,8 +65,43 @@ function removeUser() {
     })
 }
 
-function openEditModal() {
+function openEditModal(id) {
+  userID = id
   editModal.classList.add('visible')
 }
 
-function closeEditModal() { }
+function closeEditModal() {
+  editModal.classList.remove('visible')
+}
+
+editUserBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+
+  let userNewInfo = {
+    firstname: firstNameInput.value,
+    lastname: lastNameInput.value,
+    username: userNameInput.value,
+    password: passwordInput.value
+  }
+
+  fetch(`http://localhost:3000/api/users/edit/${userID}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userNewInfo)
+  }).then(res => res.json())
+    .then(data => {
+      console.log(data)
+      closeEditModal()
+      getAllUsers()
+      emptyEditModalInputs()
+    })
+})
+
+function emptyEditModalInputs() {
+  firstNameInput.value = ''
+  lastNameInput.value = ''
+  userNameInput.value = ''
+  passwordInput.value = ''
+}
