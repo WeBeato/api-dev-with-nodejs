@@ -105,3 +105,15 @@ function emptyEditModalInputs() {
   userNameInput.value = ''
   passwordInput.value = ''
 }
+
+window.addEventListener('click', (e) => {
+  if (e.target.id === 'edit-modal') {
+    closeEditModal()
+  }
+})
+
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'Escape') {
+    closeEditModal()
+  }
+})
