@@ -4,11 +4,17 @@ let userID = null
 
 
 window.addEventListener('load', () => {
+  getAllUsers()
+})
 
+function getAllUsers() {
   fetch('http://localhost:3000/api/users/all')
     .then(res => res.json())
     .then(users => {
       console.log(users)
+
+      usersWrapper.innerHTML = ''
+
       users.forEach(user => {
         usersWrapper.insertAdjacentHTML(
           "beforeend",
@@ -32,7 +38,7 @@ window.addEventListener('load', () => {
         )
       });
     })
-})
+}
 
 function showDeleteModal(id) {
   userID = id
@@ -48,6 +54,9 @@ function removeUser() {
   fetch(`http://localhost:3000/api/users/remove/${userID}`, {
     method: 'DELETE',
   }).then(res => res.json())
-    .then(data => closeDeleteModal())
+    .then(data => {
+      closeDeleteModal()
+      getAllUsers()
+    })
 }
 

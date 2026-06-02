@@ -7,26 +7,20 @@ const usersRoutes = express.Router()
 usersRoutes.post('/new-user', (req, res) => {
     const body = req.body
 
-    webeatoDB.connect((err) => {
+    let date = new Date().toLocaleDateString('fa-IR')
+
+    let newUserInsertQuery = `INSERT INTO users VALUES (NULL, "${body.firstname}", "${body.lastname}", "${body.username}", "${body.password}", "${date}")`
+
+    webeatoDB.query(newUserInsertQuery, (err, result) => {
         if (err) {
-            console.log('You have error! => ', err);
+            console.log('insert user faild!', err);
+            res.send(null)
         } else {
-            console.log('Connect to webeato db successfully.');
-            let date = new Date().toLocaleDateString('fa-IR')
-
-            let newUserInsertQuery = `INSERT INTO users VALUES (NULL, "${body.firstname}", "${body.lastname}", "${body.username}", "${body.password}", "${date}")`
-
-            webeatoDB.query(newUserInsertQuery, (err, result) => {
-                if (err) {
-                    console.log('insert user faild!', err);
-                    res.send(null)
-                } else {
-                    console.log('user inserted.');
-                    res.send(true)
-                }
-            })
+            console.log('user inserted.');
+            res.send(true)
         }
     })
+
 })
 
 usersRoutes.get('/all', (req, res) => {
@@ -35,7 +29,7 @@ usersRoutes.get('/all', (req, res) => {
 
     webeatoDB.query(getAllUsersQuery, (err, result) => {
         if (err) {
-            console.log('Ger users faild!', err);
+            console.log('Get users faild!', err);
             res.send(null)
         } else {
             console.log('All users => ', result);
