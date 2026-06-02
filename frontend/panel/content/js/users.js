@@ -1,5 +1,6 @@
 const usersWrapper = document.querySelector('#wrap-users')
 const deleteModal = document.querySelector('#delete-modal')
+const editModal = document.querySelector('#edit-modal')
 let userID = null
 
 
@@ -60,3 +61,8 @@ function removeUser() {
     })
 }
 
+function openEditModal() {
+  editModal.classList.add('visible')
+}
+
+function closeEditModal() { }
