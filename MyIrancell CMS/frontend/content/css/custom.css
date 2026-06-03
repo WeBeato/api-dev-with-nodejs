@@ -9,9 +9,9 @@
     --gold-50: #fffcef;
     --gold-400: #fdc816;
 
-    --gold-650: #818181;
-    --gold-600: #707070;
-    --gold-700: #626161;
+    --gray-650: #818181;
+    --gray-600: #707070;
+    --gray-700: #626161;
 }
 
 body,
@@ -29,7 +29,7 @@ body,
     font-weight: lighter;
 }
 
-.lalezar-fl {
+.lalezar-font {
     font-family: Lalezar;
 }
 
@@ -50,6 +50,6 @@ body,
     align-items: center;
 }
 
-.flex-culmn {
+.flex-column {
     flex-direction: column;
 }
