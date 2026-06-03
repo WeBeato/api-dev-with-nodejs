@@ -9,6 +9,7 @@ body {
     column-gap: 20px;
 }
 
+/* Coding Left Side */
 .left-side {
     padding: 20px 0px 20px 20px;
     width: 500px;
@@ -39,10 +40,44 @@ body {
     object-fit: cover;
     border-radius: 100%;
 }
-.profile-box-desc{
+
+.profile-box-desc {
     row-gap: 5px;
 }
+
 .user-name,
-.user-number{
-color: var(--gray-650);
+.user-number {
+    color: var(--gray-650);
+}
+
+.sim-card-charge-box {
+    background-color: var(--gold-50);
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.sim-card-charge-title {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.charge-progress {}
+
+.progress-10 {}
+
+.overlay {}
+
+.charge-btn {
+    background-color: var(--gold-400);
+    width: 150px;
+    border-radius: 5px;
+    color: var(--white-50);
+    font-size: 1rem;
+    box-shadow: 0 0 8px var(--gold-400);
+    border: 0;
+    outline: 0;
+    cursor: pointer;
 }
