@@ -29,3 +29,24 @@ body,
 .lalezar-fl {
     font-family: Lalezar;
 }
+
+/* Utility Class */
+.flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-culmn {
+    flex-direction: column;
+}
