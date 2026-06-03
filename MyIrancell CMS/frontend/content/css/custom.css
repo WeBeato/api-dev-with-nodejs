@@ -1,6 +1,9 @@
+@import url(./reset.css);
+@import url(./custom-font.css);
+
 :root {
     --white-50: #fff;
-    --white-10: #f6f6f6;
+    --white-100: #f6f6f6;
     --white-200: #e7e7e7;
 
     --gold-50: #fffcef;
