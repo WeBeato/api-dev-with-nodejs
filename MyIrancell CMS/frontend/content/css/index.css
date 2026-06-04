@@ -74,7 +74,7 @@ body {
 }
 
 .progress-10 {
-    background-image: -webkit-linear-gradient(360deg, #e4ebec 50%, transparent 50%), -webkit-linear-gradient(right, var(--gold-400) 50%, #e4ebec 50%);
+    background-image: -webkit-linear-gradient(90deg, var(--gold-400) 50%, transparent 50%), -webkit-linear-gradient(right, #e4ebec 50%50%, var(--gold-400) 50%);
 }
 
 .charge-progress .overlay {
@@ -99,4 +99,29 @@ body {
     border: 0;
     outline: 0;
     cursor: pointer;
+}
+
+.service-title {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.active-service-box {
+    column-gap: 12px;
+    color: var(--gray-600);
+    margin-bottom: 30px;
+}
+
+.active-service-icon {
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(253, 199, 23, 0.2);
+    border-radius: 12px;
+    color: var(--gold-400);
+}
+
+.active-service-desc {
+    line-height: 25px;
 }
