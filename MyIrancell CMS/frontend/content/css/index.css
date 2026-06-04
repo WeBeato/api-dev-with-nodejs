@@ -210,3 +210,51 @@ body {
     right: 20px;
     font-size: 1.3rem;
 }
+
+.recommend-packets {
+    background-color: var(--white-50);
+    border-radius: 20px;
+    margin-top: 25px;
+    padding: 30px;
+}
+
+.recommend-packets-title {
+    font-size: 1.3rem;
+}
+
+.recommend-packets-table {
+    margin-top: 20px;
+    width: 100%;
+    color: var(--gray-650);
+    outline: 0;
+    border-radius: 10px;
+}
+
+.recommend-packets-table tr {
+    text-align: center;
+
+}
+
+.recommend-packets-table tr:not(:first-child) {
+    border-top: 2px solid var(--white-200);
+
+}
+
+.recommend-packets-table th {
+    padding: 20px;
+}
+
+.recommend-packets-table td {
+    padding: 20px;
+}
+
+.buy-packet-btn {
+    background-color: var(--gold-400);
+    font-size: 1rem;
+    padding: 5px 30px;
+    border-radius: 10px;
+    color: var(--white-50);
+    box-shadow: 0 0 10px var(--gold-400);
+    border: 0;
+    outline: 0;
+}
