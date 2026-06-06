@@ -13,7 +13,7 @@
       sizes="32x32"
     />
     <link rel="stylesheet" href="content/css/index.css" />
-    <title>My Irancell</title>
+    <title>Document</title>
   </head>
   <body>
     <!-- Left Side -->
@@ -78,48 +78,36 @@
 
     <!-- Main Section -->
     <main class="main">
-      <h1 class="main-title lalezar-font">صفحه اصلی</h1>
-      <section class="main-overlay flex flex-column">
-        <h1 class="lalezar-font">اینهمه بسته بی سابقست !</h1>
-        <button>اینجا چخبره!</button>
-      </section>
-
-      <section class="chart">
-        <h1 class="lalezar-font">نمودار میزان مصرف کل</h1>
-        <canvas id="chart" height="100">
-          Your browzer does not support the canvas element.
-        </canvas>
-      </section>
-
       <section class="recommend-packets">
-        <h1 class="recommend-packets-title">بسته های پیشنهادی مخصوص خود شما</h1>
+        <h1 class="recommend-packets-title lalezar-font">خرید های من</h1>
         <table class="recommend-packets-table">
           <tr class="vazir-fb">
-            <th>تاریخ انقضای بسته</th>
+            <th>تاریخ خرید بسته</th>
+            <th>تاریخ انقضای</th>
             <th>نام بسته</th>
             <th>تخفیف</th>
             <th>قیمت</th>
           </tr>
           <tr>
             <td>۱۴ شهریور ۱۴۰۵</td>
-            <td>بسته اینترنت سه ماهه</td>
+            <td>۱۴ شهریور ۱۴۰۶</td>
+            <td>بسته اینترنت یک ساله</td>
             <td>۲۰٪</td>
             <td>۱۳۰،۰۰۰</td>
-            <td><button class="buy-packet-btn lalezar-font">خرید</button></td>
           </tr>
           <tr>
+            <td>۱۲ خرداد ۱۴۰۵</td>
             <td>۱۲ خرداد ۱۴۰۵</td>
             <td>بسته ترکیبی هفته‌ای</td>
             <td>۲۵٪</td>
             <td>۴۵،۰۰۰</td>
-            <td><button class="buy-packet-btn lalezar-font">خرید</button></td>
           </tr>
           <tr>
+            <td>۱۵ تیر ۱۴۰۵</td>
             <td>۱۵ تیر ۱۴۰۵</td>
             <td>بسته مکالمه شبانه</td>
             <td>۱۵٪</td>
             <td>۵۰،۰۰۰</td>
-            <td><button class="buy-packet-btn lalezar-font">خرید</button></td>
           </tr>
         </table>
       </section>
@@ -146,14 +134,14 @@
       </div>
 
       <ul class="sidebar-menu">
-        <li class="sidebar-menu-item flex align-items-center active">
+        <li class="sidebar-menu-item flex align-items-center">
           <span>
             <i class="fa-solid fa-house"></i>
           </span>
           <a href="index.html">صفحه اصلی</a>
         </li>
         <li class="sidebar-menu-item-breaker">سرویس ها</li>
-        <li class="sidebar-menu-item flex align-items-center">
+        <li class="sidebar-menu-item flex align-items-center active">
           <span>
             <i class="fa-solid fa-chart-pie"></i>
           </span>
@@ -199,8 +187,5 @@
         </li>
       </ul>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
-    <script src="content/js/index.js" type="module"></script>
   </body>
 </html>
