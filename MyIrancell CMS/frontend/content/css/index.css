@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     min-height: 100vh;
-    column-gap: 20px;
+    /* column-gap: 20px; */
 }
 
 /* Coding Left Side */
@@ -150,6 +150,7 @@ body {
 .main {
     width: 100%;
     padding: 20px 0;
+    margin: 0 20px;
 }
 
 .main-title {
@@ -257,4 +258,47 @@ body {
     box-shadow: 0 0 10px var(--gold-400);
     border: 0;
     outline: 0;
+}
+
+/* Right Side */
+.sidebar {
+    background-color: var(--white-50);
+    padding: 20px 0;
+    width: 500px;
+}
+
+.sidebar-brand {
+    margin-bottom: 30px;
+}
+
+.sidebar-brand span {
+    background-color: var(--gold-400);
+    padding: 5px 20px;
+    margin-right: 10px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+
+}
+
+.search-group {
+    width: 80%;
+    border: 2px solid var(--white-200);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.search-input {
+    border: 0;
+    outline: 0;
+    padding: 10px 15px;
+}
+
+.search-input::placeholder {
+    color: var(--white-200);
+}
+
+.search-input-icon {
+    margin-left: 10px;
+    transform: rotate(90deg);
+    color: var(--white-200);
 }
