@@ -5,9 +5,10 @@ const getUserIdFromUserToken = require('./utils/funcs')
 
 const app = express()
 app.use(cors())
+
 app.get('/api/users', (req, res) => {
     let userToken = req.headers.authorization
-    let getMainUserQuery = `SELECT * FROM users WHERE token = ${userToken}`
+    let getMainUserQuery = `SELECT * FROM users WHERE token = "${userToken}"`
 
     MyIrancellDB.query(getMainUserQuery, (error, result) => {
         if (error) {
@@ -32,29 +33,29 @@ app.get('/api/services/:isActive', (req, res) => {
 
 app.get('/api/recommend-packs', (req, res) => {
     let userToken = req.headers.authorization
-    let userID = getUserIdFromUserToken(userToken)
-
-    let getUserRecommendPacksQuery = `SELECT * FROM recommend_packet WHERE userID = ${userID}`
-    MyIrancellDB.query(getUserRecommendPacksQuery, (error, result) => {
-        if (error) {
-            res.send(null)
-        } else {
-            res.send(result)
-        }
+    getUserIdFromUserToken(userToken).then(result => {
+        let getUserRecommendPacksQuery = `SELECT * FROM recommend_packet WHERE userID = ${result[0].id}`
+        MyIrancellDB.query(getUserRecommendPacksQuery, (error, result) => {
+            if (error) {
+                res.send(null)
+            } else {
+                res.send(result)
+            }
+        })
     })
 })
 
 app.get('/api/user-buy', (req, res) => {
     let userToken = req.headers.authorization
-    let userID = getUserIdFromUserToken(userToken)
-
-    let getUserBuyInfo = `SELECT * FROM sales WHERE userID = ${userID}`
-    MyIrancellDB.query(getUserBuyInfo, (error, result) => {
-        if (error) {
-            res.send(null)
-        } else {
-            res.send(result)
-        }
+    getUserIdFromUserToken(userToken).then(result => {
+        let getUserBuyInfo = `SELECT * FROM sales WHERE userID = ${result[0].id}`
+        MyIrancellDB.query(getUserBuyInfo, (error, result) => {
+            if (error) {
+                res.send(null)
+            } else {
+                res.send(result)
+            }
+        })
     })
 })
 
