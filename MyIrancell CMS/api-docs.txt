@@ -1,0 +1,21 @@
+main url = localhost:3000/api
+
+1. Get Main User Info
+route: /users
+methode: GET
+headers: authorization
+
+2. Get All Active/Non-Active Services
+route: /services/:isActive
+isActive: 0 (Non-Active Services) || 1 (Active Services)
+methode: GET
+
+3. Get All Main User Recommend Packs
+route: /recommend-packs
+methode: GET
+headers: authorization
+
+4. Get Main User Packet Buying
+route: /user-buy
+methode: GET
+headers: authorization
