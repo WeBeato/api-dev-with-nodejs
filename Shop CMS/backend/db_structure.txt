@@ -49,3 +49,4 @@
     adminID
     productID
     date
+    isActive
