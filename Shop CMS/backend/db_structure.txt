@@ -1,0 +1,51 @@
+1. Products
+    id
+    title
+    price
+    count
+    img
+    popularity
+    sale
+    colors
+
+2. Comments
+    id
+    body
+    date
+    hour
+    userID
+    productID
+
+3. Users
+    id
+    firstname
+    lastname
+    username
+    password
+    phone
+    email
+    city
+    address
+    score
+    buy
+
+4. Orders
+    id
+    productID
+    userID
+    date
+    hour
+    price
+    off
+    sale
+    popularity
+    count
+    sale_count
+
+5. Offs
+    id
+    code
+    percent
+    adminID
+    productID
+    date
